@@ -1,0 +1,27 @@
+name: Build NOVA Windows EXE
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Build portable EXE
+        run: npm run dist:win
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NOVA-Visual-Lab-Windows-EXE
+          path: dist/*.exe

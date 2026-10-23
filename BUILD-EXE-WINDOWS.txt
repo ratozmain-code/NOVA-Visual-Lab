@@ -1,0 +1,18 @@
+NOVA VISUAL LAB — WINDOWS EXE BUILD
+
+This folder is an Electron desktop wrapper for the existing NOVA Visual Lab prototype. It is NOT itself a compiled EXE.
+
+EASIEST BUILD ROUTE (NO JAVA OR LOCAL COMPILER NEEDED):
+1. Create/sign into a GitHub account.
+2. Create a NEW repository and upload the CONTENTS of this folder (including .github/workflows/build-windows.yml).
+3. Open the repository's Actions tab.
+4. Choose "Build NOVA Windows EXE" and click "Run workflow" (or push the files to main/master).
+5. Wait for the workflow to finish successfully.
+6. Open the completed workflow run and download the artifact named NOVA-Visual-Lab-Windows-EXE.
+7. Extract the artifact and double-click NOVA-Visual-Lab-1.0.0-Windows.exe.
+
+For local development, install Node.js 22, open a terminal in this folder, then run:
+  npm install
+  npm run dist:win
+
+The EXE is a desktop wrapper around the visual sandbox. It does not inject into or modify Roblox, and player visualizations are sandbox/demo features.

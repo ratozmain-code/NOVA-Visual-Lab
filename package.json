@@ -1,0 +1,26 @@
+{
+  "name": "nova-visual-lab",
+  "version": "1.0.0",
+  "description": "NOVA Visual Lab desktop prototype",
+  "main": "main.js",
+  "author": "NOVA",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^36.5.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.nova.visuallab",
+    "productName": "NOVA Visual Lab",
+    "asar": true,
+    "files": ["main.js", "index.html", "package.json"],
+    "win": {
+      "target": ["portable"],
+      "artifactName": "NOVA-Visual-Lab-${version}-Windows.exe"
+    }
+  }
+}
